@@ -32,7 +32,7 @@
 |---|---|---|
 | **[OutboxLab](https://github.com/selivanov-tech/outboxlab)** | AI cold-outreach engine: send → reply-detect → **LLM intent-classify** → auto-pause. Bounce/suppression, per-mailbox send caps, OpenAPI-as-MCP. | `Python 3.14` · `FastAPI` · `PostgreSQL` · `Anthropic` · `Gmail API` · `LangChain (learning)` · `DDD/Hexagonal` |
 | **[tg-audio-bot](https://github.com/selivanov-tech/tg-audio-bot)** | Downloads YouTube audio to Telegram (`yt-dlp`). Hexagonal/DDD with a pluggable **provider registry** (new sources drop in), per-user queue + global concurrency caps, throttled live progress, webhook intake + **Fly.io zero-scale**. | `Go 1.26` · `Telegram Bot API` · `yt-dlp` · `Fly.io` |
-| **[symfony-ddd-demo](https://github.com/selivanov-tech/symfony-ddd-demo)** | DDD/CQRS **modular monolith** (loan eligibility): bounded-context modules + a shared kernel, command/query buses, rich aggregates + domain events, an **anti-corruption layer** between contexts, and **deptrac-enforced** layers *and* per-module boundaries. `apps/{api,cli}` split, sync-now/async-ready. | `PHP 8.3` · `Symfony 7.1` · `Doctrine ORM 3` · `DDD/CQRS` · `deptrac` · `PHPUnit` |
+| **[symfony-ddd-demo](https://github.com/selivanov-tech/symfony-ddd-demo)** | DDD/CQRS **modular monolith** (loan eligibility): bounded-context modules + a shared kernel, command/query buses, rich aggregates + domain events, an **anti-corruption layer** between contexts, and **deptrac-enforced** layers *and* per-module boundaries. `apps/{api,cli}` split, sync-now/async-ready, **OpenAPI 3 + Swagger UI** over single-action invokable controllers. | `PHP 8.3` · `Symfony 7.1` · `Doctrine ORM 3` · `DDD/CQRS` · `deptrac` · `OpenAPI` · `PHPUnit` |
 
 <!-- Add these rows when the repos go public: Coffee-shop scheduler (TypeScript) · Boxing platform (Laravel/Livewire) · Aria (FastAPI). -->
 <!-- Tip: a featured repo needs a description + README, or it looks empty. -->
@@ -89,6 +89,12 @@
   <img src="https://img.shields.io/badge/Nuxt-00DC82?style=for-the-badge&logo=nuxtdotjs&logoColor=white"/>
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
 </p>
+
+---
+
+## 🔬 Currently exploring
+
+Agent orchestration on Google Cloud: **ADK** (Google's Agent Development Kit) on **Vertex AI / Gemini Enterprise**, evaluated alongside my **LangChain / LangGraph** work. R&D via pet projects (OutboxLab, Aria) — not production.
 
 ---
 

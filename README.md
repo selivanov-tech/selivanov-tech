@@ -20,7 +20,7 @@
 
 ## 🧠 What I do
 
-- **AI / LLM in production** — prompt management, multi-model routing (OpenAI · Azure OpenAI · Anthropic · Gemini), structured JSON output, RAG/retrieval patterns, real-time voice (**Gemini Live**), and **MCP** (OpenAPI-as-MCP; a read-only catalog MCP server running in production).
+- **AI / LLM in production** — prompt management, multi-model routing (OpenAI · Azure OpenAI · Anthropic · Gemini), structured JSON output, RAG/retrieval patterns, real-time voice (**Gemini Live**), and **MCP** (a read-only catalog MCP server running in production).
 - **LLM evaluation** — Quality Assessment, golden/labelled datasets, scorecards, human-feedback comparison, eval loops for non-deterministic output.
 - **Agentic SDLC** — a worktree-per-session dev platform (**>50** parallel worktrees, each with its own DB / S3 / Redis), Claude Code as builder + Codex as adversarial reviewer, spec → parallel plan zones → merge train, monthly process retros; an LLM-maintained Obsidian knowledge base (**214** pages, **11** ADRs) as shared context for people and agents.
 - **Architecture** — DDD, CQRS, event-driven, modular monolith, transactional outbox, idempotent handlers, dead-letter queues; boundaries enforced by deptrac / phparkitect in CI.
@@ -36,7 +36,7 @@
 
 | Project | What it is | Stack |
 |---|---|---|
-| **[OutboxLab](https://github.com/selivanov-tech/outboxlab)** | AI cold-outreach engine: send → reply-detect → **LLM intent-classify** → auto-pause. Bounce/suppression, per-mailbox send caps, OpenAPI-as-MCP, tests, CI, clean domain boundaries. | `Python 3.14` · `FastAPI` · `PostgreSQL` · `Anthropic` · `Gmail API` · `LangChain/LangGraph (R&D)` · `DDD/Hexagonal` |
+| **[OutboxLab](https://github.com/selivanov-tech/outboxlab)** | AI cold-outreach engine, in progress: send via Gmail API → poll inbox → match replies by `Message-ID` / `References` → **LLM intent-classify** (deterministic rules + pluggable Anthropic / OpenAI adapter, on the de-quoted body) → transactional outbox events. Bounded contexts, Postgres-only ops with per-workspace RLS, pytest / pyright / ruff, CI + Fly deploy. Next: campaign auto-pause, bounce / unsubscribe suppression, per-mailbox caps, OpenAPI-as-MCP. | `Python 3.14` · `FastAPI` · `PostgreSQL` · `Anthropic` · `Gmail API` · `LangChain/LangGraph (R&D)` · `DDD/Hexagonal` |
 | **[tg-audio-bot](https://github.com/selivanov-tech/tg-audio-bot)** | Downloads YouTube audio to Telegram (`yt-dlp` + `ffmpeg`). Hexagonal/DDD with a pluggable **provider registry**, per-user queue + global concurrency caps (a flood of links cannot OOM a 512 MB VM), throttled live progress, webhook intake + **Fly.io zero-scale**. | `Go 1.26` · `Telegram Bot API` · `yt-dlp` · `Fly.io` |
 | **[symfony-ddd-demo](https://github.com/selivanov-tech/symfony-ddd-demo)** | DDD/CQRS **modular monolith** (loan eligibility): bounded-context modules + a shared kernel, command/query buses, rich aggregates + domain events, an **anti-corruption layer** between contexts, and **deptrac-enforced** layers *and* per-module boundaries. `apps/{api,cli}` split, sync-now/async-ready, **OpenAPI 3 + Swagger UI**. | `PHP 8.3` · `Symfony 7.4 LTS` · `Doctrine ORM 3` · `DDD/CQRS` · `deptrac` · `OpenAPI` · `PHPUnit` |
 

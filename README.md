@@ -22,7 +22,7 @@
 
 - **AI / LLM in production** — prompt management, multi-model routing (OpenAI · Azure OpenAI · Anthropic · Gemini), structured JSON output, RAG/retrieval patterns, real-time voice (**Gemini Live**), and **MCP** (a read-only catalog MCP server running in production).
 - **LLM evaluation** — Quality Assessment, golden/labelled datasets, scorecards, human-feedback comparison, eval loops for non-deterministic output.
-- **Agentic SDLC** — a worktree-per-session dev platform (**>50** parallel worktrees, each with its own DB / S3 / Redis), Claude Code as builder + Codex as adversarial reviewer, spec → parallel plan zones → merge train, monthly process retros; an LLM-maintained Obsidian knowledge base (**214** pages, **11** ADRs) as shared context for people and agents.
+- **Agentic SDLC** — a worktree-per-session dev platform (**>50** parallel worktrees, each with its own DB / S3 / Redis), Claude Code as builder + Codex as adversarial reviewer, spec → parallel plan zones → merge train, monthly process retros; an LLM-maintained Obsidian knowledge base (**214** pages, **14** ADRs) as shared context for people and agents.
 - **Architecture** — DDD, CQRS, event-driven, modular monolith, transactional outbox, idempotent handlers, dead-letter queues; boundaries enforced by deptrac / phparkitect in CI.
 - **Platform / IaC** — Kubernetes + Helm (migration hooks, atomic rollback, default-deny NetworkPolicies), OpenTofu / Terraform, GitHub Actions with OIDC (no long-lived cloud keys), External Secrets, WireGuard, encrypted offsite backups.
 - **Data pipelines** — web crawl + supplier parsers in Python, staged imports with human review and integrity checks, BigQuery analytics pipelines.
